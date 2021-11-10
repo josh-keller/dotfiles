@@ -24,8 +24,27 @@ require('packer').startup(function ()
 
   -- Git
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-surround'
 
+  -- Commenting
+  use 'tpope/vim-commentary'
+
+  -- Tags
+  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+
+  --
 
 
 end)
