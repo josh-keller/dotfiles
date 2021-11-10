@@ -40,6 +40,7 @@ require('packer').startup(function ()
   use 'tpope/vim-surround' -- Surround objects with quote, brackets, etc
   use 'romainl/vim-cool'   -- Handles search highlighting automatically
   use 'steven-liou/console-puts'  -- comment plugin
+  use 'wellle/targets.vim' -- More text objects
 
   -- Commenting
   use 'tpope/vim-commentary'
