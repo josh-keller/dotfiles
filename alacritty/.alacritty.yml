@@ -1,0 +1,21 @@
+env:
+  TERM: xterm-256color
+
+# Spread additional padding evenly around the terminal content.
+window:
+  padding:
+    x: 10
+    y: 10
+
+background_opacity: 0.95
+# Make background slightly transparent
+
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    family: JetBrains Mono
+  # Font size
+  size: 12
