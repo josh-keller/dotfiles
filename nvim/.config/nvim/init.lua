@@ -1,31 +1,4 @@
---Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- local execute = vim.api.nvim_command
-
--- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-end
-
-vim.api.nvim_exec(
-  [[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost init.lua PackerCompile
-  augroup end
-]],
-  false
-)
-
-local use = require('packer').use
-require('packer').startup(function ()
-  use 'wbthomason/packer.nvim' -- Package manager
-end)
+require('plugins')
 
 -- Line numbers
 vim.opt.number = true
@@ -40,6 +13,11 @@ vim.opt.smartcase = true
 vim.opt.updatetime = 250
 vim.opt.signcolumn = 'yes'
 
+--Splits
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+--Tab stop and indent
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -48,15 +26,26 @@ vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.textwidth = 80
 
--- Set mouse
-vim.opt.mouse = 'a'
-
 --Enable break indent
 vim.opt.breakindent = true
 
+-- Set mouse
+vim.opt.mouse = 'a'
+
 --Save undo history
 vim.opt.undofile = true
--- Remaps
+
+--Set colorscheme (order is important here)
+vim.o.termguicolors = true
+vim.g.onedark_terminal_italics = 2
+vim.cmd [[colorscheme onedark]]
+
+
+
+--Remap space as leader key
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Press <esc> to clear search highlighting
 vim.cmd("nnoremap <silent><esc> <esc>:nohlsearch<CR>")
