@@ -1,5 +1,5 @@
--- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+-- Install packer
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
@@ -39,6 +39,7 @@ require('packer').startup(function ()
   use 'tpope/vim-repeat'   -- Repeat with '.' for additional actions
   use 'tpope/vim-surround' -- Surround objects with quote, brackets, etc
   use 'romainl/vim-cool'   -- Handles search highlighting automatically
+  use 'steven-liou/console-puts'  -- comment plugin
 
   -- Commenting
   use 'tpope/vim-commentary'
