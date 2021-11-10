@@ -35,16 +35,26 @@ require('packer').startup(function ()
     end
   }
 
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-surround'
+  -- Nice to have
+  use 'tpope/vim-repeat'   -- Repeat with '.' for additional actions
+  use 'tpope/vim-surround' -- Surround objects with quote, brackets, etc
+  use 'romainl/vim-cool'   -- Handles search highlighting automatically
 
   -- Commenting
   use 'tpope/vim-commentary'
+  
+  -- Indentation tracking
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- Tags
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 
-  --
+  -- To Try
+  -- * vim-vinegar or vim-dirvish
+      -- Enhances or replaces netrw, the file manager
+  -- * vim-sleuth
+      -- auto-detects the indent rules for your project
+  -- 
 
 
 end)

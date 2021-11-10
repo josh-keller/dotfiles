@@ -41,14 +41,18 @@ vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
 
 
+--Add move line shortcuts
+vim.api.nvim_set_keymap('n', '<A-j>', ':m .+1<CR>==', { noremap = true})
+vim.api.nvim_set_keymap('n', '<A-k>', ':m .-2<CR>==', { noremap = true})
+vim.api.nvim_set_keymap('i', '<A-j>', '<Esc>:m .+1<CR>==gi', { noremap = true})
+vim.api.nvim_set_keymap('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { noremap = true})
+vim.api.nvim_set_keymap('v', '<A-j>', ':m \'>+1<CR>gv=gv', { noremap = true})
+vim.api.nvim_set_keymap('v', '<A-k>', ':m \'<-2<CR>gv=gv', { noremap = true})
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- Press <esc> to clear search highlighting
-vim.cmd("nnoremap <silent><esc> <esc>:nohlsearch<CR>")
 
 --Window commands
 vim.cmd("nnoremap <C-h> :wincmd h<CR>")
