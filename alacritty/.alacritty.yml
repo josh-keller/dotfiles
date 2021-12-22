@@ -7,8 +7,12 @@ window:
     x: 10
     y: 10
 
-background_opacity: 0.95
-# Make background slightly transparent
+custom_cursor_colors: true
+
+colors:
+  primary:
+    background: '0x191919'
+    foreground: '0xeaeaea'
 
 cursor:
   # Block Underline or Beam
