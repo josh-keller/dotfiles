@@ -42,6 +42,9 @@ require('packer').startup(function ()
   use 'steven-liou/console-puts'  -- comment plugin
   use 'wellle/targets.vim' -- More text objects
 
+  -- Lightline
+  use 'itchyny/lightline.vim'
+
   -- Commenting
   use 'tpope/vim-commentary'
   
@@ -50,6 +53,16 @@ require('packer').startup(function ()
 
   -- Tags
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  -- Language Specific
+  use { 'fatih/vim-go' }
 
   -- To Try
   -- * vim-vinegar or vim-dirvish
@@ -61,4 +74,12 @@ require('packer').startup(function ()
 
 end)
 
+-- Lighline config
+vim.g.lightline = {
+  colorscheme = 'onedark',
+  active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
+  component_function = { gitbranch = 'fugitive#head' },
+}
 
+-- Telescope config
+require('telescope').load_extension('fzf')
