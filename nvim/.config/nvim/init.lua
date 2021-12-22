@@ -1,8 +1,14 @@
 require('plugins')
 
+--Remap space as leader key
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.api.nvim_set_keymap('n', '<leader>rn', ':set relativenumber!<CR>', { noremap = true, silent = true })
 
 -- Searching
 vim.opt.hlsearch = true
@@ -28,12 +34,14 @@ vim.opt.textwidth = 80
 
 --Enable break indent
 vim.opt.breakindent = true
+vim.opt.wrap = false
 
 -- Set mouse
 vim.opt.mouse = 'a'
 
 --Save undo history
 vim.opt.undofile = true
+
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
@@ -48,11 +56,6 @@ vim.cmd [[colorscheme onedark]]
 -- vim.api.nvim_set_keymap('i', '<A-k>', '<Esc>:m .-2<CR>==gi', { noremap = true})
 -- vim.api.nvim_set_keymap('v', '<A-j>', ':m \'>+1<CR>gv=gv', { noremap = true})
 -- vim.api.nvim_set_keymap('v', '<A-k>', ':m \'<-2<CR>gv=gv', { noremap = true})
-
---Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 --Window commands
 vim.cmd("nnoremap <C-h> :wincmd h<CR>")
@@ -69,6 +72,10 @@ vim.cmd([[inoremap <A-p> <ESC>"+pa]])
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
+vim.g.gutentags_exclude_filetypes = {'gitcommit','gitconfig','gitrebase','gitsendemail','git'}
+vim.g.gutentags_ctags_exclude = {'exclude-pat-one-*', 'exclude-pat-two-*'}
+vim.g.gutentags_ctags_extra_args = {'--languages="c,c++"'}
 
 -- Highlight on yank
 vim.api.nvim_exec(
