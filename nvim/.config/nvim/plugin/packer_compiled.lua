@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
+  },
   ["onedark.vim"] = {
     loaded = true,
     path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/onedark.vim",
@@ -100,6 +105,21 @@ _G.packer_plugins = {
     path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["targets.vim"] = {
+    loaded = true,
+    path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/targets.vim",
+    url = "https://github.com/wellle/targets.vim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -114,6 +134,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-go"] = {
+    loaded = true,
+    path = "/home/joshkeller/.local/share/nvim/site/pack/packer/start/vim-go",
+    url = "https://github.com/fatih/vim-go"
   },
   ["vim-gutentags"] = {
     loaded = true,
