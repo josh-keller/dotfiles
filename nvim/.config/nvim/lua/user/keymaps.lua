@@ -20,6 +20,9 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Open explorer
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
+-- For edit vimrc
+keymap("n", "<leader>vi", ":tabnew $MYVIMRC<CR><leader>e", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -34,9 +37,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap('n', '<leader>rn', ':set relativenumber!<CR>', opts)
 
 -- INSERT --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
 
 -- VISUAL --
 -- Stay in indent mode
@@ -69,7 +69,6 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
