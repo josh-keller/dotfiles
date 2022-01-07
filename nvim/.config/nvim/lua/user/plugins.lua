@@ -49,8 +49,11 @@ return packer.startup(function(use)
   use 'romainl/vim-cool'                    -- Handles search highlighting automatically
   use 'wellle/targets.vim'                  -- More text objects
   use 'tpope/vim-commentary'                -- Comments
-  use 'steven-liou/console-puts'            -- comment plugin
+  -- use 'steven-liou/console-puts'            -- comment plugin
+  use '~/Code/neovim-plugins/console-puts'
   use 'lukas-reineke/indent-blankline.nvim' -- Show indentations
+  use "moll/vim-bbye"                       -- Better buffer deletion
+  use "tpope/vim-fugitive"                  -- Git integration
 
   -- Colorschemes
   -- use "lunarvim/colorschemes"            -- A bunch of colorschemes you can try out
@@ -76,6 +79,7 @@ return packer.startup(function(use)
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-media-files.nvim'
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- TreeSitter
   use {
@@ -86,6 +90,14 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
   use "nvim-treesitter/nvim-treesitter-textobjects"
 
+  -- Nvim-tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    }
+  }
+
   -- Autopairs
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
@@ -93,6 +105,18 @@ return packer.startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  -- Bufferline
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+  -- Gitsigns
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+  -- tag = 'release' -- To use the latest release
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
