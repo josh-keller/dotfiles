@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"                       -- Better buffer deletion
   use "akinsho/toggleterm.nvim"             -- Terminal
   use "tpope/vim-vinegar"
+  use "folke/which-key.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes"            -- A bunch of colorschemes you can try out

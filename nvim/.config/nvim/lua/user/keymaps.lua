@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 local expr_opts = { noremap = true, silent = true, expr = true }
 local term_opts = { silent = true }
-local debug_opts = { noremap = true, silent = false }
+-- local debug_opts = { noremap = true, silent = false }
 
 --Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -19,7 +19,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- For edit vimrc
-keymap("n", "<leader>vi", ":tabnew $MYVIMRC<CR><leader>e", opts)
+-- keymap("n", "<leader>.", ":e ~/dotfiles/nvim/.config/nvim/<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -32,14 +32,14 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Toggle relative line numbers
-keymap('n', '<leader>rn', ':set relativenumber!<CR>', opts)
+-- keymap('n', '<leader>rn', ':set relativenumber!<CR>', opts)
 
 -- Format file
-keymap('n', '<leader>sf', ':lua vim.lsp.buf.formatting_seq_sync()<CR>', opts)
+-- keymap('n', '<leader>sf', ':lua vim.lsp.buf.formatting_seq_sync()<CR>', opts)
 
 -- INSERT --
 
--- VISUAL --
+-- VISUAL -
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -74,14 +74,14 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- PLUGINS --
 
 -- Nvim-Tree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-
+-- keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+-- keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+-- keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+-- keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+--
 -- Bufferline
 -- These commands will navigate through buffers in order regardless of which mode you are using
 -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
