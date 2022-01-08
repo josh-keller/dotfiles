@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 local expr_opts = { noremap = true, silent = true, expr = true }
 local term_opts = { silent = true }
+local debug_opts = { noremap = true, silent = false }
 
 --Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -32,6 +33,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Toggle relative line numbers
 keymap('n', '<leader>rn', ':set relativenumber!<CR>', opts)
+
+-- Format file
+keymap('n', '<leader>sf', ':lua vim.lsp.buf.formatting_seq_sync()<CR>', opts)
 
 -- INSERT --
 

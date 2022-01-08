@@ -48,12 +48,13 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'                  -- Surround objects with quote, brackets, etc
   use 'romainl/vim-cool'                    -- Handles search highlighting automatically
   use 'wellle/targets.vim'                  -- More text objects
-  use 'tpope/vim-commentary'                -- Comments
-  -- use 'steven-liou/console-puts'            -- comment plugin
-  use '~/Code/neovim-plugins/console-puts'
+  -- use 'tpope/vim-commentary'                -- Comments
+  use 'numToStr/Comment.nvim'               -- Commnets
+  use 'steven-liou/console-puts'            -- comment plugin
   use 'lukas-reineke/indent-blankline.nvim' -- Show indentations
   use "moll/vim-bbye"                       -- Better buffer deletion
-  use "tpope/vim-fugitive"                  -- Git integration
+  use "akinsho/toggleterm.nvim"             -- Terminal
+  use "tpope/vim-vinegar"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes"            -- A bunch of colorschemes you can try out
@@ -75,6 +76,7 @@ return packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'               -- enable LSP
   use 'williamboman/nvim-lsp-installer'     -- simple to use language server installer
+  use "jose-elias-alvarez/null-ls.nvim"     -- for formatters and linters
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -89,6 +91,7 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "nvim-treesitter/nvim-treesitter-textobjects"
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Nvim-tree
   use {
@@ -110,7 +113,8 @@ return packer.startup(function(use)
   -- Bufferline
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
-  -- Gitsigns
+  -- Git
+  use "tpope/vim-fugitive" -- Git integration
   use {
     'lewis6991/gitsigns.nvim',
     requires = {
@@ -118,6 +122,8 @@ return packer.startup(function(use)
     },
   -- tag = 'release' -- To use the latest release
   }
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
