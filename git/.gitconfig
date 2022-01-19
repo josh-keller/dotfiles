@@ -7,3 +7,5 @@
 #	email = jrkeller@gmail.com
 [init]
 	defaultBranch = main
+[core]
+	autocrlf = input

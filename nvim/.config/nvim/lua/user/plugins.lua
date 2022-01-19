@@ -54,8 +54,9 @@ return packer.startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim' -- Show indentations
   use "moll/vim-bbye"                       -- Better buffer deletion
   use "akinsho/toggleterm.nvim"             -- Terminal
-  use "tpope/vim-vinegar"
+  -- use "tpope/vim-vinegar"
   use "folke/which-key.nvim"
+  use "fatih/vim-go"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes"            -- A bunch of colorschemes you can try out

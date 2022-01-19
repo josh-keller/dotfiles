@@ -111,12 +111,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Set up alias for config git repo
-alias config='/usr/bin/git --git-dir=/home/joshkeller/.cfg/ --work-tree=/home/joshkeller'
+# Turn off CTRL-S in terminal
+stty -ixon
 
 # Set neovim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+# Only enter passphrase once for git pushes
+eval `keychain --quiet --eval --agents ssh id_rsa`
+
+# Set Go Environment
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

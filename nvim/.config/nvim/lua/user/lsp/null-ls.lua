@@ -12,7 +12,7 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier,
-    formatting.gofmt,
+    -- formatting.gofmt,
     diagnostics.eslint,
     -- formatting.black.with { extra_args = { "--fast" } },
     -- formatting.stylua,
