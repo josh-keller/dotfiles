@@ -95,10 +95,14 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+/usr/bin/keychain --nogui ~/.ssh/id_rsa ~/.ssh/id_ed25519
+source $HOME/.keychain/jkhp-sh
+
 export EDITOR='nvim'
 
 # Node Version Manager
-export NVM_DIR=~/.nvm
+export NVM_DIR=~/.nvm 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Set Go Environment
