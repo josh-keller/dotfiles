@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'                  -- Surround objects with quote, brackets, etc
   use 'romainl/vim-cool'                    -- Handles search highlighting automatically
   use 'wellle/targets.vim'                  -- More text objects
-  -- use 'tpope/vim-commentary'                -- Comments
   use 'numToStr/Comment.nvim'               -- Commnets
   use 'steven-liou/console-puts'            -- comment plugin
   use 'lukas-reineke/indent-blankline.nvim' -- Show indentations
@@ -113,7 +112,7 @@ return packer.startup(function(use)
   }
 
   -- Bufferline
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- Git
   use "tpope/vim-fugitive" -- Git integration
@@ -124,8 +123,6 @@ return packer.startup(function(use)
     },
   -- tag = 'release' -- To use the latest release
   }
-
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
