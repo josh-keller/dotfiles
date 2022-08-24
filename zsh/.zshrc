@@ -98,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
+export PATH="./node_modules/.bin:$PATH"
 # Node Version Manager
 export NVM_DIR=~/.nvm 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
