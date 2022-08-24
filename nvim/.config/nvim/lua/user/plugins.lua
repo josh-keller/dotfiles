@@ -124,6 +124,30 @@ return packer.startup(function(use)
   -- tag = 'release' -- To use the latest release
   }
 
+  -- Neorg
+  use {
+    'nvim-neorg/neorg',
+    tag = "*",
+    config = function()
+        require('neorg').setup {
+          load = {
+            ["core.defaults"] = {},
+            ["core.norg.dirman"] = {
+              config = {
+                workspaces = {
+                  isi = "~/notes/isi",
+                  research = "~/notes/research",
+                  personal = "~/notes/personal",
+                }
+              }
+            }
+          }
+        }
+    end,
+    requires = "nvim-lua/plenary.nvim"
+  }
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
