@@ -96,9 +96,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-/usr/bin/keychain --nogui ~/.ssh/id_rsa ~/.ssh/id_ed25519
-source $HOME/.keychain/jkhp-sh
-
 export EDITOR='nvim'
 
 # Node Version Manager
