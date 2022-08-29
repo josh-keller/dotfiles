@@ -84,7 +84,7 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["."] = { ":e ~/dotfiles/nvim/.config/nvim/<cr>", "Configure Vim"},
+  ["."] = { ":tabedit ~/dotfiles/nvim/.config/nvim<cr>", "Configure Vim" },
   r = {
     n = { ":set relativenumber!<CR>", "Toggle Relative Numbers" },
   },
