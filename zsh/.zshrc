@@ -121,3 +121,9 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+function commands() {
+  awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
+}
+
+alias topten="history | commands | sort -rn | head"
