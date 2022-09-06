@@ -128,4 +128,26 @@ function commands() {
   awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
 }
 
+function pacs_dummy() {
+  case $1 in
+    up)
+      docker compose -f ~/code/pacs_dummy/docker-compose.yml up -d
+      ;;
+
+    down)
+      docker compose -f ~/code/pacs_dummy/docker-compose.yml down
+      ;;
+
+    stop)
+      docker compose -f ~/code/pacs_dummy/docker-compose.yml stop
+      ;;
+
+    *)
+      echo "Pacs Dummy: unkown - use 'up', 'down', or 'stop'"
+      ;;
+  esac
+}
+
+alias pd=pacs_dummy
+
 alias topten="history | commands | sort -rn | head"
