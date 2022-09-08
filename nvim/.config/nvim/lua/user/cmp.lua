@@ -103,10 +103,11 @@ cmp.setup {
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        nvim_lua = "[NVIM_LUA]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
+        nvim_lua = "[API]",
+        luasnip = "[SNIP]",
+        buffer = "[BUF]",
+        path = "[PATH]",
+        gh_issues = "[GH]",
       })[entry.source.name]
       return vim_item
     end,
@@ -116,14 +117,15 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "path" },
-    { name = "buffer" },
+    { name = "buffer", keyword_length = 5 },
+    { name = "gh_issues" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }
