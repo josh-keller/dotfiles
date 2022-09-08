@@ -204,7 +204,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "path" },
     { name = "buffer", keyword_length = 5 },
-    { name = "gh_issues" },
+    { name = "git" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
