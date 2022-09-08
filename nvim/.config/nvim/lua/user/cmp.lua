@@ -203,7 +203,7 @@ cmp.setup {
     { name = "git" },
     { name = "luasnip" },
     { name = "path" },
-    { name = "buffer" },
+    { name = "buffer", keyword_length = 5 },
     { name = 'orgmode' },
   },
   confirm_opts = {
