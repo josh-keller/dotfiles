@@ -88,6 +88,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "]b", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "[b", ":BufferLineCyclePrev<CR>", opts)
 
+keymap("n", "<leader>j", ":silent write !markdown2confluence | pbcopy<CR>", opts)
+keymap("v", "<leader>j", ":'<,'>write !markdown2confluence | pbcopy<CR>", opts)
+
 -- -- These commands will move the current buffer backwards or forwards in the bufferline
 -- nnoremap <silent><mymap> :BufferLineMoveNext<CR>
 -- nnoremap <silent><mymap> :BufferLineMovePrev<CR>
