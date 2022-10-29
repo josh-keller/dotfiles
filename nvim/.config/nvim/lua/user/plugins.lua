@@ -81,9 +81,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim"     -- for formatters and linters
 
   -- Telescope
-  use {'nvim-telescope/telescope.nvim',
-  branch = '0.1.x',
-}
+  use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-media-files.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
@@ -126,6 +124,8 @@ return packer.startup(function(use)
     },
   -- tag = 'release' -- To use the latest release
   }
+
+  use "Raimondi/vim-io"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
