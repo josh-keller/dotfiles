@@ -99,6 +99,8 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
+export PATH=/home/joshkeller/.cache/rebar3/bin:$PATH
+export PATH="$PATH:/usr/jdk-17.0.5+8/bin"
 export PATH="./node_modules/.bin:$PATH"
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
@@ -151,3 +153,5 @@ function pacs_dummy() {
 alias pd=pacs_dummy
 
 alias topten="history | commands | sort -rn | head"
+
+[ -f "/home/joshkeller/.ghcup/env" ] && source "/home/joshkeller/.ghcup/env" # ghcup-env
