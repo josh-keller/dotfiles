@@ -56,6 +56,10 @@ keymap("v", "<leader>y", '"+y', opts)
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", expr_opts)
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", expr_opts)
 
+-- Quickfix List
+keymap("n", "<leader>n", ":cnext<CR>", expr_opts)
+keymap("n", "<leader>p", ":cprev<CR>", expr_opts)
+
 -- VISUAL BLOCK --
 -- Move text up and down
 -- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
