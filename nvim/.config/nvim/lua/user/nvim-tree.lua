@@ -21,7 +21,7 @@ nvim_tree.setup {
     "alpha",
   },
   open_on_tab = false,
-  hijack_cursor = true,
+  hijack_cursor = false,
   update_cwd = true,
   diagnostics = {
     enable = true,
@@ -33,8 +33,8 @@ nvim_tree.setup {
     },
   },
   update_focused_file = {
-    enable = true,
-    update_cwd = true,
+    enable = false,
+    update_cwd = false,
     ignore_list = {},
   },
   git = {
