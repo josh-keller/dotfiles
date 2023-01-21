@@ -68,27 +68,34 @@ return packer.startup(function(use)
   --[[ use "folke/tokyonight.nvim" ]]
   --[[ use "lunarvim/darkplus.nvim" ]]
   use "joshdick/onedark.vim"
+  use "folke/neodev.nvim"
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {'williamboman/mason.nvim'},           -- Optional
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use { 'petertriho/cmp-git', requires = 'nvim-lua/plenary.nvim' }
-  use 'hrsh7th/cmp-cmdline' -- cmdline completions
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},         -- Required
+      {'hrsh7th/cmp-nvim-lsp'},     -- Required
+      {'hrsh7th/cmp-buffer'},       -- Optional
+      {'hrsh7th/cmp-path'},         -- Optional
+      {'saadparwaiz1/cmp_luasnip'}, -- Optional
+      {'hrsh7th/cmp-nvim-lua'},     -- Optional
 
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},             -- Required
+      {'rafamadriz/friendly-snippets'}, -- Optional
+    }
+  }
+  -- use { 'petertriho/cmp-git', requires = 'nvim-lua/plenary.nvim' }
+  -- use 'hrsh7th/cmp-cmdline' -- cmdline completions
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use { "williamboman/mason.nvim"}
-  use "williamboman/mason-lspconfig.nvim"
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "RRethy/vim-illuminate"
+  -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

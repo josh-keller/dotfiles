@@ -15,91 +15,6 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
--- Git completion
-
-local format = require("cmp_git.format")
-local sort = require("cmp_git.sort")
-
-require("cmp_git").setup({
-    -- defaults
-    filetypes = { "gitcommit", "octo" },
-    remotes = { "upstream", "origin" }, -- in order of most to least prioritized
-    enableRemoteUrlRewrites = false, -- enable git url rewrites, see https://git-scm.com/docs/git-config#Documentation/git-config.txt-urlltbasegtinsteadOf
-    git = {
-        commits = {
-            limit = 100,
-            sort_by = sort.git.commits,
-            format = format.git.commits,
-        },
-    },
-    github = {
-        issues = {
-            fields = { "title", "number", "body", "updatedAt", "state" },
-            filter = "all", -- assigned, created, mentioned, subscribed, all, repos
-            limit = 100,
-            state = "open", -- open, closed, all
-            sort_by = sort.github.issues,
-            format = format.github.issues,
-        },
-        mentions = {
-            limit = 100,
-            sort_by = sort.github.mentions,
-            format = format.github.mentions,
-        },
-        pull_requests = {
-            fields = { "title", "number", "body", "updatedAt", "state" },
-            limit = 100,
-            state = "open", -- open, closed, merged, all
-            sort_by = sort.github.pull_requests,
-            format = format.github.pull_requests,
-        },
-    },
-    --[[ gitlab = { ]]
-    --[[     issues = { ]]
-    --[[         limit = 100, ]]
-    --[[         state = "opened", -- opened, closed, all ]]
-    --[[         sort_by = sort.gitlab.issues, ]]
-    --[[         format = format.gitlab.issues, ]]
-    --[[     }, ]]
-    --[[     mentions = { ]]
-    --[[         limit = 100, ]]
-    --[[         sort_by = sort.gitlab.mentions, ]]
-    --[[         format = format.gitlab.mentions, ]]
-    --[[     }, ]]
-    --[[     merge_requests = { ]]
-    --[[         limit = 100, ]]
-    --[[         state = "opened", -- opened, closed, locked, merged ]]
-    --[[         sort_by = sort.gitlab.merge_requests, ]]
-    --[[         format = format.gitlab.merge_requests, ]]
-    --[[     }, ]]
-    --[[ }, ]]
-    trigger_actions = {
-        {
-            debug_name = "git_commits",
-            trigger_character = ":",
-            action = function(sources, trigger_char, callback, params, git_info)
-                return sources.git:get_commits(callback, params, trigger_char)
-            end,
-        },
-        {
-            debug_name = "github_issues_and_pr",
-            trigger_character = "#",
-            action = function(sources, trigger_char, callback, params, git_info)
-                return sources.github:get_issues_and_prs(callback, git_info, trigger_char)
-            end,
-        },
-        {
-            debug_name = "github_mentions",
-            trigger_character = "@",
-            action = function(sources, trigger_char, callback, params, git_info)
-                return sources.github:get_mentions(callback, git_info, trigger_char)
-            end,
-        },
-    },
-  }
-)
-
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
@@ -192,7 +107,6 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
-        git = "[Git]",
       })[entry.source.name]
       return vim_item
     end,
@@ -200,7 +114,6 @@ cmp.setup {
   sources = {
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
-    { name = "git" },
     { name = "luasnip" },
     { name = "path" },
     { name = "buffer", keyword_length = 3 },
