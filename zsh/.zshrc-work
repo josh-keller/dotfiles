@@ -1,0 +1,44 @@
+#!/bin/zsh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/jkeller/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+
+function pacs_dummy() {
+  case $1 in
+    up)
+      docker compose -f ~/code/pacs_dummy/docker-compose.yml up -d
+      ;;
+
+    down)
+      docker compose -f ~/code/pacs_dummy/docker-compose.yml down
+      ;;
+
+    stop)
+      docker compose -f ~/code/pacs_dummy/docker-compose.yml stop
+      ;;
+
+    *)
+      echo "Pacs Dummy: unkown - use 'up', 'down', or 'stop'"
+      ;;
+  esac
+}
+
+function dc_restart() {
+  if [ -z $1 ]; then
+    echo "Usage: dc_restart <container_name>"
+    exit 1
+  fi
+  docker compose stop "$1" && docker compose up -d "$1"
+}
+
+
+alias pd=pacs_dummy
+alias 'cdp'='cd ~/code/Hub-platform'
+alias 'cdc'='cd ~/code/Hub-cloud'
+alias 'cdh'='cd ~/code/Hub'
+alias cdn='cd ~/notes && ls'
+alias m2c='markdown2confluence'

@@ -90,68 +90,40 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 export EDITOR='nvim'
 
-export PATH=/home/joshkeller/.cache/rebar3/bin:$PATH
-export PATH="$PATH:/usr/jdk-17.0.5+8/bin"
-export PATH="./node_modules/.bin:$PATH"
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Check for MacOS -> work, otherwise -> home
+if [[ $(uname -s) -eq "Darwin" ]]; then
+  source ~/.zshrc-work
+else
+  source ~/.zshrc-home
+fi
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/jkeller/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+export PATH="./node_modules/.bin:$PATH"
+
+# Node Version Manager
+#
+# Defer initialization of nvm until nvm, node or a node-dependent command is
+# run. Ensure this block is only run once if .bashrc gets sourced multiple times
+# by checking whether __init_nvm is a function.
+# Taken from: https://www.growingwiththeweb.com/2018/01/slow-nvm-init.html
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = "__init_nvm: function" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'webpack' 'markdown2confluence')
+  function __init_nvm() {
+    for i in "${__node_commands[@]}"; do unalias $i; done
+    . "$NVM_DIR"/nvm.sh
+    unset __node_commands
+    unset -f __init_nvm
+  }
+  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-function commands() {
-  awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
+function mcd () {
+  mkdir -p "$1"
+  cd "$1"
 }
-
-function pacs_dummy() {
-  case $1 in
-    up)
-      docker compose -f ~/code/pacs_dummy/docker-compose.yml up -d
-      ;;
-
-    down)
-      docker compose -f ~/code/pacs_dummy/docker-compose.yml down
-      ;;
-
-    stop)
-      docker compose -f ~/code/pacs_dummy/docker-compose.yml stop
-      ;;
-
-    *)
-      echo "Pacs Dummy: unkown - use 'up', 'down', or 'stop'"
-      ;;
-  esac
-}
-
-alias pd=pacs_dummy
-
-alias topten="history | commands | sort -rn | head"
-
-[ -f "/home/joshkeller/.ghcup/env" ] && source "/home/joshkeller/.ghcup/env" # ghcup-env
