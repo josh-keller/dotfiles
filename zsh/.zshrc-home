@@ -5,3 +5,5 @@ export PATH="$PATH:/usr/jdk-17.0.5+8/bin"
 
 # Haskell thing:
 [ -f "/home/joshkeller/.ghcup/env" ] && source "/home/joshkeller/.ghcup/env" # ghcup-env
+
+export PATH="$PATH:$HOME/.local/bin:$HOME/code/go/bin"
