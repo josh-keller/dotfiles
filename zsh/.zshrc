@@ -81,6 +81,10 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+completions_path=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+
+[[ -d $completions_path ]] || git clone https://github.com/zsh-users/zsh-completions $completions_path
+fpath+=$completions_path/src
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
