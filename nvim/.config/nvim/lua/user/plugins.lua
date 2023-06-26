@@ -118,9 +118,9 @@ return packer.startup(function(use)
   }
 
   -- Bufferline
-  -- use { "akinsho/bufferline.nvim",
-  --   requires = 'kyazdani42/nvim-web-devicons'
-  -- }
+  use { "akinsho/bufferline.nvim",
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
 
   --[[ -- DAP ]]
   --[[ use "mfussenegger/nvim-dap" ]]
