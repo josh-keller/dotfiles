@@ -1,5 +1,7 @@
 local servers = {
-	"sumneko_lua",
+  "clangd",
+  "pylsp",
+  "vuels",
 	"lua_ls",
 	"cssls",
 	"html",
