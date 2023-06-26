@@ -127,6 +127,7 @@ fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+alias gbc='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 function mcd () {
   mkdir -p "$1"
