@@ -36,9 +36,10 @@ function dc_restart() {
 }
 
 
-alias pd=pacs_dummy
+alias 'pd'=pacs_dummy
 alias 'cdp'='cd ~/code/Hub-platform'
 alias 'cdc'='cd ~/code/Hub-cloud'
 alias 'cdh'='cd ~/code/Hub'
-alias cdn='cd ~/notes && ls'
-alias m2c='markdown2confluence'
+alias 'cdt'='cd ~/notes/Tickets'
+alias 'cdn'='cd ~/notes && ls'
+alias 'm2c'='markdown2confluence'
