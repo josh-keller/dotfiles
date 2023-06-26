@@ -120,6 +120,6 @@ nvim_tree.setup {
           symlink_open = "",
         },
       },
-    }, 
+    },
   },
 }

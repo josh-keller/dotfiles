@@ -61,8 +61,9 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   -- use "tpope/vim-vinegar"
   use "folke/which-key.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "goolord/alpha-nvim"
+  -- use "ahmedkhalf/project.nvim"
+  -- use "goolord/alpha-nvim"
+-- use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- Colorschemes
   --[[ use "folke/tokyonight.nvim" ]]
@@ -88,7 +89,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim"}
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "RRethy/vim-illuminate"
+  -- use "RRethy/vim-illuminate"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -117,9 +118,9 @@ return packer.startup(function(use)
   }
 
   -- Bufferline
-  use { "akinsho/bufferline.nvim",
-    requires = 'kyazdani42/nvim-web-devicons'
-  }
+  -- use { "akinsho/bufferline.nvim",
+  --   requires = 'kyazdani42/nvim-web-devicons'
+  -- }
 
   --[[ -- DAP ]]
   --[[ use "mfussenegger/nvim-dap" ]]

@@ -1,7 +1,7 @@
 local servers = {
 	"sumneko_lua",
+	"lua_ls",
 	"cssls",
-  "erlangls",
 	"html",
 	"tsserver",
 	"pyright",
