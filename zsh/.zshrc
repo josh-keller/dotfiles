@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 
 # Check for MacOS -> work, otherwise -> home
-if [[ $(uname -s) -eq "Darwin" ]]; then
+if [[ $(uname -s) == "Darwin" ]]; then
   source ~/.zshrc-work
 else
   source ~/.zshrc-home

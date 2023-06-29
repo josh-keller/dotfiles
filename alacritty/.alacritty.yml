@@ -16,7 +16,8 @@ colors:
 
 cursor:
   # Block Underline or Beam
-  style: Block
+  style:
+    shape: Block
 
 font:
   normal:
