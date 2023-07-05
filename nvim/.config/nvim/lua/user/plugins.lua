@@ -63,7 +63,11 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   -- use "ahmedkhalf/project.nvim"
   -- use "goolord/alpha-nvim"
--- use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  -- use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn["mkdp#util#install"]() end,
+  }
 
   -- Colorschemes
   --[[ use "folke/tokyonight.nvim" ]]
