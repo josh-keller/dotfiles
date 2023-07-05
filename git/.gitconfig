@@ -9,6 +9,7 @@
 	defaultBranch = main
 [core]
 	autocrlf = input
+	pager = less -FX
 [alias]
   s = status
   co = checkout
