@@ -1,6 +1,6 @@
 local servers = {
   "clangd",
-  "pylsp",
+  -- "pylsp",
   "vuels",
 	"lua_ls",
 	"cssls",
@@ -10,7 +10,7 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
-  "elixirls",
+  -- "elixirls",
   "clojure_lsp",
   "solargraph",
   "gopls"
