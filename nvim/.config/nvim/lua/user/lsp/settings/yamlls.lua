@@ -4,6 +4,7 @@
 local opts = {
   settings = {
     yaml = {
+      keyOrdering = false,
       schemas = require("schemastore").json.schemas(),
       validate = { enable = true },
       customTags = {

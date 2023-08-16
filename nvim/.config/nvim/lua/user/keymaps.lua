@@ -13,11 +13,17 @@ vim.g.maplocalleader = " "
 
 -- NORMAL --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", opts)
+keymap("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", opts)
+keymap("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", opts)
+keymap("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", opts)
+-- keymap("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", opts)
+keymap("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNext<CR>", opts)
 -- For edit vimrc
 -- keymap("n", "<leader>.", ":e ~/dotfiles/nvim/.config/nvim/<cr>", opts)
 
