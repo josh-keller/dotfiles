@@ -113,6 +113,7 @@ else
 fi
 
 export PATH="./node_modules/.bin:$PATH"
+export PATH="$PATH:$HOME/bin"
 
 # Node Version Manager
 #
