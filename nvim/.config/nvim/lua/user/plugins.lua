@@ -145,6 +145,13 @@ return packer.startup(function(use)
   use "fatih/vim-go"
   use "Raimondi/vim-io"
 
+  use { "alexghergh/nvim-tmux-navigation", config = function() 
+    local nvim_tmux_nav = require('nvim-tmux-navigation')
+    nvim_tmux_nav.setup {
+      disable_when_zoomed = true
+    }
+  end
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
